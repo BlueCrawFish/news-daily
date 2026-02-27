@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日新闻简报</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      text-align: center;
+      color: white;
+      padding: 40px 0;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00d9ff, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header .subtitle { color: #888; font-size: 1rem; }
+
+    .section { margin-bottom: 40px; }
+    .section-title {
+      color: #00d9ff;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0,217,255,0.3);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    .news-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: block;
+    }
+    .news-card:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-3px);
+      border-color: rgba(0,217,255,0.4);
+    }
+
+    .news-card .source-tag {
+      display: inline-block;
+      background: rgba(0,217,255,0.15);
+      color: #00d9ff;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+    }
+
+    .news-card .title {
+      color: #eee;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .news-card .desc {
+      color: #777;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* 快捷入口 */
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .quick-links a {
+      padding: 12px 24px;
+      background: rgba(255,255,255,0.1);
+      color: #00d9ff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .quick-links a:hover {
+      background: rgba(0,217,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 1.8rem; }
+      .news-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📰 每日新闻简报</h1>
+      <div class="subtitle">精选全球主流媒体 · 一键直达</div>
+    </div>
+
+    <div class="quick-links">
+      <a href="https://www.zaobao.com/" target="_blank">🇸🇬 联合早报</a>
+      <a href="https://news.sina.com.cn/" target="_blank">🇨🇳 新浪新闻</a>
+      <a href="https://www.cnn.com/" target="_blank">🇺🇸 CNN</a>
+      <a href="https://www.bbc.com/zhongwen/simp" target="_blank">🇬🇧 BBC中文</a>
+      <a href="https://cn.wsj.com/" target="_blank">🇺🇸 华尔街日报</a>
+      <a href="https://news.google.com/" target="_blank">🌐 Google News</a>
+    </div>
+
+    <!-- 中文媒体 -->
+    <div class="section">
+      <h2 class="section-title">🇨🇳 中文媒体</h2>
+      <div class="news-grid">
+        <a href="https://www.zaobao.com/" class="news-card" target="_blank">
+          <span class="source-tag">新加坡</span>
+          <div class="title">联合早报</div>
+          <div class="desc">新加坡中文报章，专注两岸三地、国际新闻</div>
+        </a>
+        <a href="https://news.sina.com.cn/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">新浪新闻</div>
+          <div class="desc">中国主流新闻门户</div>
+        </a>
+        <a href="https://news.163.com/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">网易新闻</div>
+          <div class="desc">有态度的资讯平台</div>
+        </a>
+        <a href="https://www.thepaper.cn/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">澎湃新闻</div>
+          <div class="desc">专注时政与思想</div>
+        </a>
+        <a href="https://www.jiemian.com/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">界面新闻</div>
+          <div class="desc">原创财经资讯</div>
+        </a>
+        <a href="https://www.guancha.cn/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">观察者网</div>
+          <div class="desc">全球视野·中国情怀</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 国际媒体 -->
+    <div class="section">
+      <h2 class="section-title">🌍 国际媒体</h2>
+      <div class="news-grid">
+        <a href="https://www.cnn.com/" class="news-card" target="_blank">
+          <span class="source-tag">美国</span>
+          <div class="title">CNN</div>
+          <div class="desc">美国有线电视新闻网</div>
+        </a>
+        <a href="https://www.bbc.com/zhongwen/simp" class="news-card" target="_blank">
+          <span class="source-tag">英国</span>
+          <div class="title">BBC中文网</div>
+          <div class="desc">英国广播公司中文部</div>
+        </a>
+        <a href="https://cn.wsj.com/" class="news-card" target="_blank">
+          <span class="source-tag">美国</span>
+          <div class="title">华尔街日报中文网</div>
+          <div class="desc">权威财经媒体</div>
+        </a>
+        <a href="https://news.yahoo.com/" class="news-card" target="_blank">
+          <span class="source-tag">美国</span>
+          <div class="title">Yahoo News</div>
+          <div class="desc">全球新闻聚合</div>
+        </a>
+        <a href="https://news.usnews.com/" class="news-card" target="_blank">
+          <span class="source-tag">美国</span>
+          <div class="title">US News</div>
+          <div class="desc">美国新闻与世界报道</div>
+        </a>
+        <a href="https://www.reuters.com/" class="news-card" target="_blank">
+          <span class="source-tag">英国</span>
+          <div class="title">路透社</div>
+          <div class="desc">全球新闻通讯社</div>
+        </a>
+        <a href="https://apnews.com/" class="news-card" target="_blank">
+          <span class="source-tag">美国</span>
+          <div class="title">AP News</div>
+          <div class="desc">美联社</div>
+        </a>
+        <a href="https://www.dw.com/zh/" class="news-card" target="_blank">
+          <span class="source-tag">德国</span>
+          <div class="title">DW中文网</div>
+          <div class="desc">德国之声</div>
+        </a>
+        <a href="https://www.rfi.fr/" class="news-card" target="_blank">
+          <span class="source-tag">法国</span>
+          <div class="title">RFI 中文</div>
+          <div class="desc">法国国际广播电台</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 科技媒体 -->
+    <div class="section">
+      <h2 class="section-title">💻 科技媒体</h2>
+      <div class="news-grid">
+        <a href="https://tech.sina.com.cn/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">新浪科技</div>
+          <div class="desc">科技频道</div>
+        </a>
+        <a href="https://www.36kr.com/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">36氪</div>
+          <div class="desc">新商业媒体</div>
+        </a>
+        <a href="https://www.ifeng.com/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">凤凰网</div>
+          <div class="desc">综合资讯</div>
+        </a>
+        <a href="https://tech.163.com/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">网易科技</div>
+          <div class="desc">科技频道</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 财经媒体 -->
+    <div class="section">
+      <h2 class="section-title">💰 财经媒体</h2>
+      <div class="news-grid">
+        <a href="https://finance.sina.com.cn/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">新浪财经</div>
+          <div class="desc">财经频道</div>
+        </a>
+        <a href="https://finance.eastmoney.com/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">东方财富</div>
+          <div class="desc">财经门户</div>
+        </a>
+        <a href="https://www.cls.cn/" class="news-card" target="_blank">
+          <span class="source-tag">中国</span>
+          <div class="title">财经网</div>
+          <div class="desc">财经新闻</div>
+        </a>
+        <a href="https://www.bloomberg.com/" class="news-card" target="_blank">
+          <span class="source-tag">美国</span>
+          <div class="title">Bloomberg</div>
+          <div class="desc">彭博社</div>
+        </a>
+        <a href="https://www.ft.com/" class="news-card" target="_blank">
+          <span class="source-tag">英国</span>
+          <div class="title">Financial Times</div>
+          <div class="desc">金融时报</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>点击任意卡片即可跳转至对应媒体网站</p>
+      <p style="margin-top:10px;color:#666">更新时间: <span id="updateTime"></span></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('updateTime').textContent = new Date().toLocaleString('zh-CN');
+  </script>
+</body>
+</html>
